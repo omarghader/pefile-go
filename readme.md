@@ -8,7 +8,7 @@ cd pefile-go/ && go build
 Compare with
 python ./python/petest.py ./exe_test_files/00b6ea24092c43db96e4dec79dfcdafd301c78a3d0ebaa27d8d5e4934793876d
 
-Features :
+### Features :
 1. Import Hash calculation
 2. Section Hash Calculation ( md5, sha1,sha256,sha512)
 3. Extract Section string
