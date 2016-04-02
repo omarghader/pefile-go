@@ -13,7 +13,7 @@ Features :
 2. Section Hash Calculation ( md5, sha1,sha256,sha512)
 3. Extract Section string
 
- ### Usage
+## Usage
 
 ```javascript
 	pefile, err := pe.NewPEFile(args[0])
