@@ -12,7 +12,7 @@ import (
 	"errors"
 	"fmt"
 	mmap "github.com/edsrzf/mmap-go"
-	"github.com/omarghader/pefile-golib"
+	"github.com/omarghader/pefile-go/lib"
 	"log"
 	"os"
 	"sort"
