@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/omarghader/pefile-gope"
+	"github.com/omarghader/pefile-go/pe"
 	"log"
 	"os"
 )

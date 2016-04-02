@@ -5,7 +5,7 @@ package pe
 import (
 	"errors"
 	"fmt"
-	"github.com/omarghader/pefile-golib"
+	"github.com/omarghader/pefile-go/lib"
 	"log"
 	"reflect"
 )
