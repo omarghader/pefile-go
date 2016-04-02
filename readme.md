@@ -3,15 +3,43 @@
 Golang port of PEFile
 
 cd pefile-go/ && go build
-./pefile-go ../exe_test_files/00b6ea24092c43db96e4dec79dfcdafd301c78a3d0ebaa27d8d5e4934793876d
+./pefile-go ./exe_test_files/00b6ea24092c43db96e4dec79dfcdafd301c78a3d0ebaa27d8d5e4934793876d
 
 Compare with
-./petest.py exe_test_files/00b6ea24092c43db96e4dec79dfcdafd301c78a3d0ebaa27d8d5e4934793876d
+python ./python/petest.py ./exe_test_files/00b6ea24092c43db96e4dec79dfcdafd301c78a3d0ebaa27d8d5e4934793876d
 
-So far whats working: Everything through ImportDirectories
+Features :
+1. Import Hash calculation
+2. Section Hash Calculation ( md5, sha1,sha256,sha512)
+3. Extract Section string
 
+ ### Usage
 
-        
+```javascript
+	pefile, err := pe.NewPEFile(args[0])
+	if err != nil {
+		log.Println("Ooopss looks like there was a problem")
+		log.Println(err)
+		return
+	}
+
+	log.Println("Imphash : ", pefile.GetImpHash())
+
+	for _, section := range pefile.Sections {
+		fmt.Println("-------------------------")
+		data := pefile.GetData(section)
+		name := fmt.Sprintf("%s", section.Data.Name)
+		md5 := section.Get_hash_md5(data)
+		sha256 := section.Get_hash_sha256(data)
+		entropy := section.Get_entropy(data)
+		fmt.Println("name:", name)
+		fmt.Println("md5 : ", md5)
+		fmt.Println("sha256:", sha256)
+		fmt.Println("entropy:", entropy)
+	}
+```
+ 
+-----------------------------------------        
 _pefile_ is a multi-platform Python module to parse and work with [Portable Executable (aka PE) files](http://en.wikipedia.org/wiki/Portable_Executable). Most of the information contained in the PE headers is accessible as well as all sections' details and their data.
 
 The structures defined in the Windows header files will be accessible as attributes in the PE instance. The naming of fields/attributes will try to adhere to the naming scheme in those headers. Only shortcuts added for convenience will depart from that convention.
