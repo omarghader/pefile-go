@@ -70,6 +70,9 @@ func main() {
 		md5 := section.Get_hash_md5(data)
 		sha256 := section.Get_hash_sha256(data)
 		entropy := section.Get_entropy(data)
-		fmt.Println("name:", name, "\nmd5 : ", md5, "\nsha256: ", sha256, "\nentropy", entropy)
+		fmt.Println("name:", name)
+		fmt.Println("md5 : ", md5)
+		fmt.Println("sha256:", sha256)
+		fmt.Println("entropy:", entropy)
 	}
 }
