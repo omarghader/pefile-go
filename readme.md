@@ -1,12 +1,12 @@
 # pefile
 
-Golang port of PEFile
+Parsing Pefile (Portable Executable) in Golang
 
-cd pefile-go/ && go build
-./pefile-go ./exe_test_files/00b6ea24092c43db96e4dec79dfcdafd301c78a3d0ebaa27d8d5e4934793876d
-
-Compare with
-python ./python/petest.py ./exe_test_files/00b6ea24092c43db96e4dec79dfcdafd301c78a3d0ebaa27d8d5e4934793876d
+```bash
+$ cd pefile-go/
+$ go build
+$ ./pefile-go ./exe_test_files/00b6ea24092c43db96e4dec79dfcdafd301c78a3d0ebaa27d8d5e4934793876d
+```
 
 ### Features :
 1. Import Hash calculation
