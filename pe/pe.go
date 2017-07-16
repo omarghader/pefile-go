@@ -249,6 +249,9 @@ func (self *PEFile) parseSections(offset uint32) (newOffset uint32, err error) {
 }
 
 func (self *PEFile) parseHeader(iface interface{}, offset, size uint32) (err error) {
+	if int(offset+size) >= len(self.data) {
+		return nil
+	}
 	buf := bytes.NewReader(self.data[offset : offset+size])
 	err = binary.Read(buf, binary.LittleEndian, iface)
 	if err != nil {
